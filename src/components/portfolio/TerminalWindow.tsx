@@ -35,7 +35,7 @@ export function TerminalWindow() {
       }, 4200);
       return () => clearTimeout(restart);
     }
-    const line = script[lineIdx];
+    const line = script[lineIdx]!;
     if (charIdx < line.text.length) {
       const t = setTimeout(() => setCharIdx((c) => c + 1), line.prompt ? 55 : 14);
       return () => clearTimeout(t);
