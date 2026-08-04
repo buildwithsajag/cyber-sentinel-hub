@@ -1,24 +1,49 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { NavBar } from "@/components/portfolio/NavBar";
+import { Hero } from "@/components/portfolio/Hero";
+import { About } from "@/components/portfolio/About";
+import { Skills } from "@/components/portfolio/Skills";
+import { Projects } from "@/components/portfolio/Projects";
+import { Labs } from "@/components/portfolio/Labs";
+import { Certifications } from "@/components/portfolio/Certifications";
+import { Contact } from "@/components/portfolio/Contact";
+import { Footer } from "@/components/portfolio/Footer";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Aarav Sharma // Cybersecurity Student & Security Researcher";
+const description =
+  "Portfolio of a cybersecurity student focused on network defense, penetration testing, and security automation — projects, labs, CTF writeups, and certifications.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  const [terminalMode, setTerminalMode] = useState(false);
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className={terminalMode ? "font-mono [&_h1]:font-mono [&_h2]:font-mono [&_h3]:font-mono" : ""}>
+      <NavBar terminalMode={terminalMode} onToggleTerminal={() => setTerminalMode((v) => !v)} />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Labs />
+        <Certifications />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
