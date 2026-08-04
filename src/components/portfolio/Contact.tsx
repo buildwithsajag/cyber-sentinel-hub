@@ -123,8 +123,8 @@ export function Contact() {
                 onChange={(e) => setValues((v) => ({ ...v, message: e.target.value }))}
                 className={`${inputCls} resize-none`}
               />
-              {errors.message && (
-                <p className="mt-1.5 font-mono text-[11px] text-destructive">{errors.message}</p>
+              {errors["message"] && (
+                <p className="mt-1.5 font-mono text-[11px] text-destructive">{errors["message"]}</p>
               )}
             </div>
             <button
