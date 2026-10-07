@@ -2,11 +2,11 @@
 
 Create a modern, high-tech, and professional single-page portfolio website for a Cybersecurity Student. The overall aesthetic should be sleek and cyber-inspired, using a dark mode theme (deep slate/charcoal background `#0F172A`, slate blue secondary panels `#1E293B`, vibrant cyan accents `#06B6D4`, and neon green status highlights `#10B981`). Use a clean, readable sans-serif font paired with a monospaced font for technical details, code snippets, and terminal elements.
 
-Structure the page with the following sections and interactive components:
+Structure page with the following sections and interactive components:
 
 1. Navigation Bar (Sticky):
 
-   - Logo/Name: "[Your Name] // Security Researcher" in a monospaced font.
+   - Logo/Name: "[Sajag] // Security Researcher" in a monospaced font.
 
    - Smooth-scroll nav links: About, Skills, Projects, Labs & CTFs, Certifications, Contact.
 
